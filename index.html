@@ -1,0 +1,142 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exclusive Custom Finishes LLC</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            scroll-behavior: smooth;
+        }
+        header {
+            position: relative;
+            background: linear-gradient(to right, #4a90e2, #9013fe);
+            color: white;
+            padding: 20px 10%;
+            text-align: center;
+        }
+        nav {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 3px 0;
+        }
+        .menu {
+            display: flex;
+        }
+        .menu.active {
+            display: block;
+        }
+        .section {
+            padding: 60px 10%;
+            background: white;
+            text-align: center;
+        }
+        .footer {
+            background: #f1f1f1;
+            text-align: center;
+            padding: 20px;
+        }
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+                flex-direction: column;
+            }
+            .hamburger {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Exclusive Custom Finishes LLC</h1>
+    <p>Your trusted flooring contractors</p>
+    <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <nav class="menu">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#hours">Hours</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section id="about" class="section">
+    <h2>About Us</h2>
+    <p>Welcome to Exclusive Custom Finishes LLC, your go-to flooring contractors in Redding, CT. We specialize in providing high-quality custom flooring finishes tailored to your needs.</p>
+</section>
+
+<section id="services" class="section">
+    <h2>Our Services</h2>
+    <p>We offer a range of flooring services including:</p>
+    <ul>
+        <li>Custom Hardwood Flooring</li>
+        <li>Tile Installation</li>
+        <li>Floor Refinishing</li>
+        <li>Vinyl Floor Installation</li>
+    </ul>
+</section>
+
+<section id="hours" class="section">
+    <h2>Business Hours</h2>
+    <p>Monday - Friday: 9 AM - 5 PM</p>
+    <p>Saturday: 10 AM - 4 PM</p>
+    <p>Sunday: Closed</p>
+</section>
+
+<section id="contact" class="section">
+    <h2>Contact Us</h2>
+    <p>Address: 265 Redding Rd, Redding, CT 06896, USA</p>
+    <p>Phone: <a href="tel:+19145652747">Call Now</a></p>
+    <a href="https://www.google.com/maps/search/?api=1&query=EXCLUSIVE%20CUSTOM%20FINISHES%20LLC%20265%20Redding%20Rd%2C%20Redding%2C%20CT%2006896%2C%20USA" target="_blank">Get Directions</a>
+</section>
+
+<footer class="footer">
+    <p>&copy; 2023 Exclusive Custom Finishes LLC | Rating: 0/5 (0 reviews)</p>
+</footer>
+
+<script>
+    const menu = document.querySelector('.menu');
+    const toggleMenu = () => {
+        menu.classList.toggle('active');
+    };
+</script>
+
+<script>
+(function(){document.addEventListener('click',function(e){
+  var el=e.target.closest('a'); if(!el)return;
+  var href=el.getAttribute('href');
+  if(href&&href.startsWith('#')&&href.length>1){
+    e.preventDefault();
+    var t=document.getElementById(href.slice(1));
+    if(t)t.scrollIntoView({behavior:'smooth'});
+  }
+},true);})();
+</script>
+</body>
+</html>
+```
