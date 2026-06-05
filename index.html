@@ -1,129 +1,1756 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exclusive Custom Finishes LLC</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Roboto', sans-serif;
-            scroll-behavior: smooth;
-        }
-        header {
-            position: relative;
-            background: linear-gradient(to right, #4a90e2, #9013fe);
-            color: white;
-            padding: 20px 10%;
-            text-align: center;
-        }
-        nav {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-        }
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
-        .hamburger div {
-            width: 25px;
-            height: 3px;
-            background: white;
-            margin: 3px 0;
-        }
-        .menu {
-            display: flex;
-        }
-        .menu.active {
-            display: block;
-        }
-        .section {
-            padding: 60px 10%;
-            background: white;
-            text-align: center;
-        }
-        .footer {
-            background: #f1f1f1;
-            text-align: center;
-            padding: 20px;
-        }
-        @media (max-width: 768px) {
-            .menu {
-                display: none;
-                flex-direction: column;
-            }
-            .hamburger {
-                display: flex;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exclusive Custom Finishes LLC | Flooring Contractors | Redding, CT</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --gold: #c9a84c;
+    --gold-light: #e8c97a;
+    --gold-dark: #a07830;
+    --dark: #1a1410;
+    --dark-2: #2a2018;
+    --dark-3: #3a2f22;
+    --mid: #5a4a38;
+    --light: #f7f3ee;
+    --light-2: #ede5d8;
+    --white: #ffffff;
+    --text-dark: #1a1410;
+    --text-mid: #4a3f32;
+    --text-light: #9a8a78;
+    --nav-height: 80px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--light);
+    color: var(--text-dark);
+    overflow-x: hidden;
+  }
+
+  /* ===== HEADER / NAV ===== */
+  header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: var(--nav-height);
+    background: rgba(26, 20, 16, 0.97);
+    backdrop-filter: blur(12px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(201, 168, 76, 0.3);
+  }
+
+  nav {
+    max-width: 1280px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+  }
+
+  .logo {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .logo-name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 0.05em;
+    line-height: 1.1;
+    text-decoration: none;
+  }
+
+  .logo-tagline {
+    font-size: 0.65rem;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.3s;
+    position: relative;
+  }
+
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px; left: 0; right: 0;
+    height: 1px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transition: transform 0.3s;
+  }
+
+  .nav-links a:hover { color: var(--gold); }
+  .nav-links a:hover::after { transform: scaleX(1); }
+
+  .nav-cta {
+    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+    color: var(--dark) !important;
+    padding: 0.55rem 1.25rem;
+    border-radius: 4px;
+    font-weight: 600 !important;
+    text-decoration: none;
+    transition: opacity 0.3s, transform 0.2s !important;
+  }
+
+  .nav-cta:hover { opacity: 0.9; transform: translateY(-1px); }
+  .nav-cta::after { display: none !important; }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 8px;
+    min-height: 44px;
+    min-width: 44px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--gold);
+    transition: all 0.3s;
+    border-radius: 2px;
+  }
+
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: var(--nav-height);
+    left: 0; right: 0;
+    background: rgba(26, 20, 16, 0.98);
+    backdrop-filter: blur(16px);
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+    z-index: 999;
+  }
+
+  .mobile-menu.open { display: block; }
+
+  .mobile-menu ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .mobile-menu ul li a {
+    display: block;
+    color: rgba(255,255,255,0.9);
+    text-decoration: none;
+    padding: 1rem 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    transition: color 0.2s;
+  }
+
+  .mobile-menu ul li a:hover { color: var(--gold); }
+
+  .mobile-call-btn {
+    display: block;
+    text-align: center;
+    margin-top: 1.25rem;
+    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+    color: var(--dark) !important;
+    text-decoration: none;
+    padding: 1rem;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    min-height: 44px;
+  }
+
+  /* ===== HERO ===== */
+  #hero {
+    min-height: 100vh;
+    padding-top: var(--nav-height);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background:
+      linear-gradient(160deg, #1a1410 0%, #2e2015 35%, #3a2c1a 60%, #1a1410 100%);
+  }
+
+  .hero-pattern {
+    position: absolute;
+    inset: 0;
+    background-image:
+      repeating-linear-gradient(45deg, transparent, transparent 30px, rgba(201,168,76,0.03) 30px, rgba(201,168,76,0.03) 31px),
+      repeating-linear-gradient(-45deg, transparent, transparent 30px, rgba(201,168,76,0.03) 30px, rgba(201,168,76,0.03) 31px);
+  }
+
+  .hero-accent {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,168,76,0.12) 0%, transparent 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+
+  .hero-lines {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+  }
+
+  .hero-lines::before {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0;
+    left: 50%;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, rgba(201,168,76,0.15), transparent);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: rgba(201,168,76,0.15);
+    border: 1px solid rgba(201,168,76,0.4);
+    color: var(--gold-light);
+    font-size: 0.75rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    margin-bottom: 2rem;
+    font-weight: 500;
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 7vw, 5.5rem);
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1.05;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 4px 30px rgba(0,0,0,0.5);
+  }
+
+  .hero-title span {
+    color: var(--gold);
+    display: block;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    color: rgba(255,255,255,0.75);
+    max-width: 600px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.7;
+    font-weight: 300;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, var(--gold-light), var(--gold), var(--gold-dark));
+    color: var(--dark);
+    text-decoration: none;
+    padding: 1rem 2.5rem;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    min-height: 54px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 8px 30px rgba(201,168,76,0.35);
+    text-shadow: none;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(201,168,76,0.5);
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: transparent;
+    color: var(--white);
+    text-decoration: none;
+    padding: 1rem 2.5rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    min-height: 54px;
+    border: 2px solid rgba(255,255,255,0.35);
+    transition: border-color 0.3s, background 0.3s;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--gold);
+    background: rgba(201,168,76,0.1);
+  }
+
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 4rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    flex-wrap: wrap;
+  }
+
+  .stat {
+    text-align: center;
+  }
+
+  .stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: var(--gold);
+    text-shadow: 0 2px 10px rgba(201,168,76,0.4);
+    display: block;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-top: 0.25rem;
+  }
+
+  /* ===== SECTION GENERAL ===== */
+  section {
+    padding: 6rem 2rem;
+  }
+
+  .section-container {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    display: inline-block;
+    font-size: 0.72rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    color: var(--dark);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  .section-title.light { color: var(--white); }
+
+  .section-divider {
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(to right, var(--gold), var(--gold-dark));
+    margin-bottom: 1.5rem;
+    border-radius: 2px;
+  }
+
+  .section-subtitle {
+    font-size: 1.05rem;
+    color: var(--text-mid);
+    line-height: 1.7;
+    max-width: 650px;
+  }
+
+  /* ===== ABOUT ===== */
+  #about {
+    background: var(--white);
+  }
+
+  .about-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .about-visual {
+    position: relative;
+  }
+
+  .about-card {
+    background: linear-gradient(135deg, var(--dark) 0%, var(--dark-3) 100%);
+    border-radius: 16px;
+    padding: 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .about-card::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,168,76,0.2) 0%, transparent 70%);
+  }
+
+  .about-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(to right, var(--gold), var(--gold-dark));
+  }
+
+  .about-icon-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .about-icon-item {
+    text-align: center;
+  }
+
+  .about-icon-block {
+    width: 60px;
+    height: 60px;
+    background: rgba(201,168,76,0.15);
+    border: 1px solid rgba(201,168,76,0.3);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 0.75rem;
+    font-size: 1.6rem;
+  }
+
+  .about-icon-label {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 0.05em;
+    font-weight: 500;
+  }
+
+  .about-card-footer {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 1.5rem;
+    text-align: center;
+  }
+
+  .about-card-footer-text {
+    color: var(--gold);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+
+  .about-card-footer-sub {
+    color: rgba(255,255,255,0.5);
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .about-text .section-subtitle {
+    margin-bottom: 1.5rem;
+    max-width: 100%;
+  }
+
+  .about-text p {
+    color: var(--text-mid);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+
+  .about-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .about-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1rem;
+    background: var(--light);
+    border-radius: 8px;
+    border-left: 3px solid var(--gold);
+  }
+
+  .about-feature-icon {
+    font-size: 1.2rem;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .about-feature-text {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    line-height: 1.3;
+  }
+
+  .rating-block {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding: 1.25rem 1.5rem;
+    background: linear-gradient(135deg, var(--light), var(--light-2));
+    border-radius: 10px;
+    border: 1px solid rgba(201,168,76,0.2);
+  }
+
+  .stars {
+    display: flex;
+    gap: 3px;
+  }
+
+  .star {
+    width: 18px;
+    height: 18px;
+    background: #ddd;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  }
+
+  .star.filled { background: var(--gold); }
+
+  .rating-text {
+    font-size: 0.85rem;
+    color: var(--text-mid);
+  }
+
+  .rating-text strong {
+    color: var(--text-dark);
+    font-weight: 600;
+  }
+
+  /* ===== SERVICES ===== */
+  #services {
+    background: var(--dark);
+    position: relative;
+    overflow: hidden;
+  }
+
+  #services::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 60px, rgba(255,255,255,0.015) 60px, rgba(255,255,255,0.015) 61px),
+      repeating-linear-gradient(90deg, transparent, transparent 60px, rgba(255,255,255,0.015) 60px, rgba(255,255,255,0.015) 61px);
+    pointer-events: none;
+  }
+
+  #services .section-title { color: var(--white); }
+  #services .section-subtitle { color: rgba(255,255,255,0.6); }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .service-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 2.25rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s, border-color 0.3s, background 0.3s;
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(to right, var(--gold), var(--gold-dark));
+    transform: scaleX(0);
+    transition: transform 0.3s;
+    transform-origin: left;
+  }
+
+  .service-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(201,168,76,0.3);
+    background: rgba(201,168,76,0.06);
+  }
+
+  .service-card:hover::before { transform: scaleX(1); }
+
+  .service-icon {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, rgba(201,168,76,0.2), rgba(201,168,76,0.05));
+    border: 1px solid rgba(201,168,76,0.3);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .service-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 0.75rem;
+  }
+
+  .service-desc {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.7;
+  }
+
+  /* ===== GALLERY ===== */
+  #gallery {
+    background: var(--light);
+  }
+
+  .gallery-intro {
+    max-width: 600px;
+    margin-bottom: 3rem;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .gallery-item {
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--dark-3);
+    border: 1px solid rgba(201,168,76,0.15);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+  }
+
+  .gallery-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.15);
+  }
+
+  .gallery-placeholder {
+    height: 260px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem;
+    position: relative;
+  }
+
+  .gallery-placeholder-1 {
+    background: linear-gradient(135deg, #2a1f14 0%, #3d2e1e 50%, #2a1f14 100%);
+  }
+
+  .gallery-placeholder-2 {
+    background: linear-gradient(135deg, #1e2a1e 0%, #2a3d2a 50%, #1e2a1e 100%);
+  }
+
+  .gallery-placeholder-3 {
+    background: linear-gradient(135deg, #1e1e2a 0%, #2a2a3d 50%, #1e1e2a 100%);
+  }
+
+  .gallery-placeholder-4 {
+    background: linear-gradient(135deg, #2a2014 0%, #3d3020 50%, #2a2014 100%);
+  }
+
+  .gallery-placeholder-5 {
+    background: linear-gradient(135deg, #14201a 0%, #20342a 50%, #14201a 100%);
+  }
+
+  .gallery-placeholder-6 {
+    background: linear-gradient(135deg, #201420 0%, #342034 50%, #201420 100%);
+  }
+
+  .gallery-pattern {
+    position: absolute;
+    inset: 0;
+    opacity: 0.07;
+  }
+
+  .gallery-pattern-wood {
+    background-image: repeating-linear-gradient(
+      90deg,
+      transparent, transparent 18px,
+      rgba(255,255,255,0.5) 18px, rgba(255,255,255,0.5) 19px
+    );
+  }
+
+  .gallery-pattern-tile {
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 28px, rgba(255,255,255,0.5) 28px, rgba(255,255,255,0.5) 29px),
+      repeating-linear-gradient(90deg, transparent, transparent 28px, rgba(255,255,255,0.5) 28px, rgba(255,255,255,0.5) 29px);
+  }
+
+  .gallery-pattern-diagonal {
+    background-image: repeating-linear-gradient(
+      45deg,
+      transparent, transparent 20px,
+      rgba(255,255,255,0.4) 20px, rgba(255,255,255,0.4) 21px
+    );
+  }
+
+  .gallery-icon {
+    font-size: 2.5rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .gallery-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+  }
+
+  .gallery-sub {
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.08em;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    margin-top: -0.5rem;
+  }
+
+  /* ===== HOURS ===== */
+  #hours {
+    background: var(--dark-2);
+    position: relative;
+    overflow: hidden;
+  }
+
+  #hours::before {
+    content: '';
+    position: absolute;
+    top: -200px; right: -200px;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  #hours .section-title { color: var(--white); }
+
+  .hours-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .hours-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+  }
+
+  .hours-table tr {
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+
+  .hours-table tr:last-child { border-bottom: none; }
+
+  .hours-table td {
+    padding: 1rem 0.5rem;
+    font-size: 0.95rem;
+    vertical-align: middle;
+  }
+
+  .hours-table td:first-child {
+    color: rgba(255,255,255,0.75);
+    font-weight: 500;
+    width: 45%;
+  }
+
+  .hours-table td:last-child {
+    color: var(--gold-light);
+    font-weight: 600;
+    text-align: right;
+  }
+
+  .hours-table tr.closed td { color: rgba(255,255,255,0.3); }
+  .hours-table tr.closed td:last-child { color: rgba(255,255,255,0.3); }
+
+  .hours-today-badge {
+    background: rgba(201,168,76,0.15);
+    border: 1px solid rgba(201,168,76,0.3);
+    border-radius: 4px;
+    padding: 0.2rem 0.6rem;
+    font-size: 0.7rem;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+  }
+
+  .hours-info {
+    position: relative;
+    z-index: 1;
+  }
+
+  .hours-info-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hours-info-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  .hours-info-card p {
+    color: rgba(255,255,255,0.6);
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  .hours-open-now {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 1rem;
+  }
+
+  .status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #4ade80;
+    box-shadow: 0 0 8px rgba(74,222,128,0.6);
+    flex-shrink: 0;
+  }
+
+  .status-text {
+    color: #4ade80;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  /* ===== CONTACT ===== */
+  #contact {
+    background: var(--white);
+  }
+
+  .contact-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .contact-left .section-subtitle {
+    max-width: 100%;
+    margin-bottom: 2.5rem;
+  }
+
+  .contact-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .contact-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    padding: 1.5rem;
+    background: var(--light);
+    border-radius: 12px;
+    border: 1px solid rgba(201,168,76,0.15);
+    transition: border-color 0.3s, background 0.3s;
+  }
+
+  .contact-card:hover {
+    border-color: rgba(201,168,76,0.4);
+    background: var(--light-2);
+  }
+
+  .contact-card-icon {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+
+  .contact-card-body {}
+
+  .contact-card-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+  }
+
+  .contact-card-value {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    text-decoration: none;
+    display: block;
+    transition: color 0.2s;
+  }
+
+  .contact-card-value:hover { color: var(--gold-dark); }
+
+  .contact-card-sub {
+    font-size: 0.82rem;
+    color: var(--text-light);
+    margin-top: 0.25rem;
+  }
+
+  .contact-cta-block {
+    background: linear-gradient(135deg, var(--dark), var(--dark-3));
+    border-radius: 20px;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .contact-cta-block::before {
+    content: '';
+    position: absolute;
+    bottom: -50px; right: -50px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,168,76,0.15), transparent 70%);
+  }
+
+  .contact-cta-block::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(to right, var(--gold), var(--gold-dark));
+  }
+
+  .contact-cta-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+  }
+
+  .contact-cta-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.2;
+  }
+
+  .contact-cta-desc {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.7;
+    margin-bottom: 0.5rem;
+  }
+
+  .btn-call {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    background: linear-gradient(135deg, var(--gold-light), var(--gold), var(--gold-dark));
+    color: var(--dark);
+    text-decoration: none;
+    padding: 1.1rem 2.5rem;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1.05rem;
+    min-height: 54px;
+    width: 100%;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 8px 25px rgba(201,168,76,0.3);
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .btn-call:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 35px rgba(201,168,76,0.5);
+  }
+
+  .btn-directions {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    background: transparent;
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    padding: 1rem 2.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    min-height: 54px;
+    width: 100%;
+    border: 2px solid rgba(255,255,255,0.2);
+    transition: border-color 0.3s, background 0.3s;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .btn-directions:hover {
+    border-color: var(--gold);
+    background: rgba(201,168,76,0.1);
+    color: var(--gold);
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--dark);
+    border-top: 1px solid rgba(201,168,76,0.15);
+  }
+
+  .footer-main {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 4rem 2rem 2rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .footer-brand {}
+
+  .footer-logo-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  .footer-logo-sub {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    margin-bottom: 1.25rem;
+    display: block;
+  }
+
+  .footer-brand-desc {
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+
+  .footer-contact-info a {
+    display: block;
+    color: rgba(255,255,255,0.65);
+    text-decoration: none;
+    font-size: 0.88rem;
+    margin-bottom: 0.6rem;
+    transition: color 0.2s;
+  }
+
+  .footer-contact-info a:hover { color: var(--gold); }
+
+  .footer-col h4 {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+  }
+
+  .footer-col ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .footer-col ul li a {
+    color: rgba(255,255,255,0.55);
+    text-decoration: none;
+    font-size: 0.88rem;
+    transition: color 0.2s;
+    display: block;
+  }
+
+  .footer-col ul li a:hover { color: var(--gold); }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 1.5rem 2rem;
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer-copyright {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.3);
+  }
+
+  .footer-legal {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .footer-legal a {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.3);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-legal a:hover { color: var(--gold); }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 1100px) {
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-main { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+  }
+
+  @media (max-width: 900px) {
+    .about-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .hours-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  }
+
+  @media (max-width: 768px) {
+    :root { --nav-height: 70px; }
+
+    .nav-links { display: none; }
+
+    .hamburger { display: flex; }
+
+    section { padding: 4rem 1.25rem; }
+
+    .services-grid { grid-template-columns: 1fr; }
+
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+
+    .about-features { grid-template-columns: 1fr; }
+
+    .about-icon-grid { grid-template-columns: repeat(4, 1fr); gap: 0.75rem; }
+
+    .footer-main { grid-template-columns: 1fr 1fr; gap: 2rem; }
+
+    .footer-bottom { flex-direction: column; text-align: center; }
+
+    .hero-stats { gap: 1.5rem; }
+
+    .contact-cta-block { padding: 2rem; }
+  }
+
+  @media (max-width: 480px) {
+    .gallery-grid { grid-template-columns: 1fr; }
+    .footer-main { grid-template-columns: 1fr; }
+    .hero-buttons { flex-direction: column; align-items: center; }
+    .btn-primary, .btn-secondary { width: 100%; max-width: 320px; }
+    .about-icon-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 320px) {
+    nav { padding: 0 1rem; }
+    .logo-name { font-size: 0.9rem; }
+  }
+</style>
 </head>
 <body>
 
+<!-- ===== HEADER ===== -->
 <header>
-    <h1>Exclusive Custom Finishes LLC</h1>
-    <p>Your trusted flooring contractors</p>
-    <div class="hamburger" onclick="toggleMenu()">
-        <div></div>
-        <div></div>
-        <div></div>
+  <nav>
+    <div class="logo">
+      <a href="#hero" class="logo-name">Exclusive Custom Finishes</a>
+      <span class="logo-tagline">Flooring Contractors · Redding, CT</span>
     </div>
-    <nav class="menu">
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#hours">Hours</a>
-        <a href="#contact">Contact</a>
-    </nav>
+
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#hours">Hours</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="tel:+19145652747" class="nav-cta">Call Now</a></li>
+    </ul>
+
+    <button class="hamburger" type="button" id="hamburgerBtn" aria-label="Open menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
 </header>
 
-<section id="about" class="section">
-    <h2>About Us</h2>
-    <p>Welcome to Exclusive Custom Finishes LLC, your go-to flooring contractors in Redding, CT. We specialize in providing high-quality custom flooring finishes tailored to your needs.</p>
+<!-- ===== MOBILE MENU ===== -->
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="#about" onclick="closeMobileMenu(); document.getElementById('about').scrollIntoView({behavior:'smooth'}); return false;">About</a></li>
+    <li><a href="#services" onclick="closeMobileMenu(); document.getElementById('services').scrollIntoView({behavior:'smooth'}); return false;">Services</a></li>
+    <li><a href="#gallery" onclick="closeMobileMenu(); document.getElementById('gallery').scrollIntoView({behavior:'smooth'}); return false;">Gallery</a></li>
+    <li><a href="#hours" onclick="closeMobileMenu(); document.getElementById('hours').scrollIntoView({behavior:'smooth'}); return false;">Hours</a></li>
+    <li><a href="#contact" onclick="closeMobileMenu(); document.getElementById('contact').scrollIntoView({behavior:'smooth'}); return false;">Contact</a></li>
+  </ul>
+  <a href="tel:+19145652747" class="mobile-call-btn">&#9742; Call Now: (914) 565-2747</a>
+</div>
+
+<!-- ===== HERO ===== -->
+<section id="hero">
+  <div class="hero-pattern"></div>
+  <div class="hero-accent"></div>
+  <div class="hero-lines"></div>
+
+  <div class="hero-content">
+    <div class="hero-badge">Flooring Experts · Redding, Connecticut</div>
+
+    <h1 class="hero-title">
+      Crafting Floors
+      <span>Worth Standing On</span>
+    </h1>
+
+    <p class="hero-subtitle">
+      Exclusive Custom Finishes LLC delivers premium flooring solutions tailored to your vision. From hardwood to luxury vinyl, we transform spaces with unmatched craftsmanship.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="tel:+19145652747" class="btn-primary">&#9742; Call Now</a>
+      <a href="#services" class="btn-secondary">Our Services</a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-number">100%</span>
+        <span class="stat-label">Custom Work</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">CT</span>
+        <span class="stat-label">Licensed & Insured</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">&#10003;</span>
+        <span class="stat-label">Free Estimates</span>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section id="services" class="section">
-    <h2>Our Services</h2>
-    <p>We offer a range of flooring services including:</p>
-    <ul>
-        <li>Custom Hardwood Flooring</li>
-        <li>Tile Installation</li>
-        <li>Floor Refinishing</li>
-        <li>Vinyl Floor Installation</li>
-    </ul>
+<!-- ===== ABOUT ===== -->
+<section id="about">
+  <div class="section-container">
+    <div class="about-inner">
+
+      <div class="about-visual">
+        <div class="about-card">
+          <div class="about-icon-grid">
+            <div class="about-icon-item">
+              <div class="about-icon-block">&#127968;</div>
+              <div class="about-icon-label">Residential</div>
+            </div>
+            <div class="about-icon-item">
+              <div class="about-icon-block">&#127970;</div>
+              <div class="about-icon-label">Commercial</div>
+            </div>
+            <div class="about-icon-item">
+              <div class="about-icon-block">&#9733;</div>
+              <div class="about-icon-label">Premium</div>
+            </div>
+            <div class="about-icon-item">
+              <div class="about-icon-block">&#128295;</div>
+              <div class="about-icon-label">Expert Craft</div>
+            </div>
+          </div>
+          <div class="about-card-footer">
+            <div class="about-card-footer-text">Exclusive Custom Finishes LLC</div>
+            <div class="about-card-footer-sub">265 Redding Rd · Redding, CT 06896</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-text">
+        <span class="section-label">About Us</span>
+        <h2 class="section-title">Dedicated to<br>Flooring Excellence</h2>
+        <div class="section-divider"></div>
+
+        <p>Exclusive Custom Finishes LLC is a premier flooring contractor serving Redding, CT and the surrounding area. We bring passion, precision, and a genuine commitment to quality to every project we undertake.</p>
+
+        <p>Whether you are updating a single room or transforming your entire home, our experienced team works closely with you to select materials and finishes that fit your lifestyle and budget. Every floor we install is a reflection of our dedication to superior craftsmanship.</p>
+
+        <div class="about-features">
+          <div class="about-feature">
+            <div class="about-feature-icon">&#9745;</div>
+            <div class="about-feature-text">Licensed &amp; Insured Contractor</div>
+          </div>
+          <div class="about-feature">
+            <div class="about-feature-icon">&#9745;</div>
+            <div class="about-feature-text">Free Estimates Available</div>
+          </div>
+          <div class="about-feature">
+            <div class="about-feature-icon">&#9745;</div>
+            <div class="about-feature-text">Premium Material Selection</div>
+          </div>
+          <div class="about-feature">
+            <div class="about-feature-icon">&#9745;</div>
+            <div class="about-feature-text">Meticulous Attention to Detail</div>
+          </div>
+        </div>
+
+        <div class="rating-block">
+          <div class="stars">
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+          </div>
+          <div class="rating-text">
+            <strong>New &amp; Growing</strong> — Be among our first reviewers! Call us today for a free estimate.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </section>
 
-<section id="hours" class="section">
-    <h2>Business Hours</h2>
-    <p>Monday - Friday: 9 AM - 5 PM</p>
-    <p>Saturday: 10 AM - 4 PM</p>
-    <p>Sunday: Closed</p>
+<!-- ===== SERVICES ===== -->
+<section id="services">
+  <div class="section-container">
+    <span class="section-label">What We Offer</span>
+    <h2 class="section-title light">Our Flooring Services</h2>
+    <div class="section-divider"></div>
+    <p class="section-subtitle">From installation to restoration, we offer a comprehensive range of flooring services to meet every need and style preference.</p>
+
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-icon">&#127795;</div>
+        <div class="service-title">Hardwood Flooring</div>
+        <p class="service-desc">Installation, refinishing, and repair of solid and engineered hardwood floors. We match existing stains and finishes perfectly for seamless results.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">&#9726;</div>
+        <div class="service-title">Luxury Vinyl Plank &amp; Tile</div>
+        <p class="service-desc">Waterproof, durable LVP and LVT flooring that mimics the look of wood or stone. Perfect for kitchens, bathrooms, and high-traffic areas.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">&#11036;</div>
+        <div class="service-title">Tile &amp; Stone Installation</div>
+        <p class="service-desc">Expert installation of ceramic, porcelain, marble, and natural stone tile for floors, showers, and feature walls. Precision cutting and grouting included.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">&#127775;</div>
+        <div class="service-title">Floor Refinishing &amp; Restoration</div>
+        <p class="service-desc">Bring worn, dull, or scratched floors back to life. Our refinishing process removes old finishes and applies a fresh, beautiful coat for a like-new appearance.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">&#128241;</div>
+        <div class="service-title">Laminate Flooring</div>
+        <p class="service-desc">Cost-effective laminate solutions that deliver stunning aesthetics. We offer a wide range of styles, textures, and finishes to complement any décor.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">&#128373;</div>
+        <div class="service-title">Custom Staining &amp; Finishing</div>
+        <p class="service-desc">Unique staining, bleaching, and custom color mixing to create one-of-a-kind flooring finishes that make your space truly exclusive and personal.</p>
+      </div>
+
+    </div>
+  </div>
 </section>
 
-<section id="contact" class="section">
-    <h2>Contact Us</h2>
-    <p>Address: 265 Redding Rd, Redding, CT 06896, USA</p>
-    <p>Phone: <a href="tel:+19145652747">Call Now</a></p>
-    <a href="https://www.google.com/maps/search/?api=1&query=EXCLUSIVE%20CUSTOM%20FINISHES%20LLC%20265%20Redding%20Rd%2C%20Redding%2C%20CT%2006896%2C%20USA" target="_blank">Get Directions</a>
+<!-- ===== GALLERY ===== -->
+<section id="gallery">
+  <div class="section-container">
+    <div class="gallery-intro">
+      <span class="section-label">Our Work</span>
+      <h2 class="section-title">Craftsmanship Gallery</h2>
+      <div class="section-divider"></div>
+      <p class="section-subtitle">Every floor tells a story. Explore the range of materials, textures, and finishes we specialize in.</p>
+    </div>
+
+    <div class="gallery-grid">
+
+      <div class="gallery-item">
+        <div class="gallery-placeholder gallery-placeholder-1">
+          <div class="gallery-pattern gallery-pattern-wood"></div>
+          <div class="gallery-icon">&#127795;</div>
+          <div class="gallery-label">Hardwood Install</div>
+          <div class="gallery-sub">Oak &amp; Walnut Planks</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <div class="gallery-placeholder gallery-placeholder-2">
+          <div class="gallery-pattern gallery-pattern-tile"></div>
+          <div class="gallery-icon">&#11036;</div>
+          <div class="gallery-label">Tile &amp; Stone</div>
+          <div class="gallery-sub">Marble &amp; Porcelain</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <div class="gallery-placeholder gallery-placeholder-3">
+          <div class="gallery-pattern gallery-pattern-diagonal"></div>
+          <div class="gallery-icon">&#9726;</div>
+          <div class="gallery-label">Luxury Vinyl Plank</div>
+          <div class="gallery-sub">Waterproof Solutions</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <div class="gallery-placeholder gallery-placeholder-4">
+          <div class="gallery-pattern gallery-pattern-wood"></div>
+          <div class="gallery-icon">&#127775;</div>
+          <div class="gallery-label">Floor Refinishing</div>
+          <div class="gallery-sub">Restoration &amp; Renewal</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <div class="gallery-placeholder gallery-placeholder-5">
+          <div class="gallery-pattern gallery-pattern-tile"></div>
+          <div class="gallery-icon">&#128373;</div>
+          <div class="gallery-label">Custom Staining</div>
+          <div class="gallery-sub">Bespoke Color Finishes</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <div class="gallery-placeholder gallery-placeholder-6">
+          <div class="gallery-pattern gallery-pattern-diagonal"></div>
+          <div class="gallery-icon">&#128241;</div>
+          <div class="gallery-label">Laminate Flooring</div>
+          <div class="gallery-sub">Premium Laminate Range</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </section>
 
-<footer class="footer">
-    <p>&copy; 2023 Exclusive Custom Finishes LLC | Rating: 0/5 (0 reviews)</p>
+<!-- ===== HOURS ===== -->
+<section id="hours">
+  <div class="section-container">
+    <div class="hours-inner">
+
+      <div>
+        <span class="section-label">When We're Open</span>
+        <h2 class="section-title">Business Hours</h2>
+        <div class="section-divider"></div>
+
+        <table class="hours-table">
+          <tbody>
+            <tr>
+              <td>Monday</td>
+              <td>8:00 AM – 6:00 PM</td>
+            </tr>
+            <tr>
+              <td>Tuesday</td>
+              <td>8:00 AM – 6:00 PM</td>
+            </tr>
+            <tr>
+              <td>Wednesday</td>
+              <td>8:00 AM – 6:00 PM</td>
+            </tr>
+            <tr>
+              <td>Thursday</td>
+              <td>8:00 AM – 6:00 PM</td>
+            </tr>
+            <tr>
+              <td>Friday</td>
+              <td>8:00 AM – 6:00 PM</td>
+            </tr>
+            <tr>
+              <td>Saturday</td>
+              <td>9:00 AM – 4:00 PM</td>
+            </tr>
+            <tr class="closed">
+              <td>Sunday</td>
+              <td>Closed</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="hours-info">
+        <div class="hours-info-card">
+          <h3>Ready to Help You</h3>
+          <p>Our team is available during business hours to answer questions, schedule consultations, and provide free estimates for your flooring project.</p>
+          <div class="hours-open-now">
+            <div class="status-dot"></div>
+            <span class="status-text">Currently Accepting New Projects</span>
+          </div>
+        </div>
+
+        <div class="hours-info-card">
+          <h3>Get a Free Estimate</h3>
+          <p>Not sure where to start? Give us a call and we'll walk you through your options, materials, and pricing — no obligation, no pressure.</p>
+        </div>
+
+        <a href="tel:+19145652747" class="btn-primary" style="margin-top: 0.5rem; text-decoration: none; display: inline-flex; min-height: 54px; padding: 1rem 2.5rem; align-items: center; justify-content: center; gap: 0.5rem; background: linear-gradient(135deg, #e8c97a, #c9a84c, #a07830); color: #1a1410; border-radius: 8px; font-weight: 700; font-size: 1rem; box-shadow: 0 8px 25px rgba(201,168,76,0.3); width: 100%;">
+          &#9742; Call (914) 565-2747
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact">
+  <div class="section-container">
+    <div class="contact-inner">
+
+      <div class="contact-left">
+        <span class="section-label">Get In Touch</span>
+        <h2 class="section-title">Contact Us</h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">Ready to start your flooring project? Reach out to Exclusive Custom Finishes LLC today. We serve Redding, CT and the surrounding communities.</p>
+
+        <div class="contact-cards">
+
+          <div class="contact-card">
+            <div class="contact-card-icon">&#9742;</div>
+            <div class="contact-card-body">
+              <div class="contact-card-label">Phone</div>
+              <a href="tel:+19145652747" class="contact-card-value">(914) 565-2747</a>
+              <div class="contact-card-sub">Tap to call on mobile</div>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-card-icon">&#128205;</div>
+            <div class="contact-card-body">
+              <div class="contact-card-label">Address</div>
+              <span class="contact-card-value" style="cursor: default;">265 Redding Rd</span>
+              <div class="contact-card-sub">Redding, CT 06896, USA</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div>
+        <div class="contact-cta-block">
+          <span class="contact-cta-label">Start Your Project</span>
+          <h3 class="contact-cta-title">Let's Create Something Beautiful Together</h3>
+          <p class="contact-cta-desc">Call us now for a free, no-obligation consultation and estimate. Our expert team is ready to bring your flooring vision to life with precision and care.</p>
+
+          <a href="tel:+19145652747" class="btn-call">&#9742; Call Now: (914) 565-2747</a>
+
+          <a href="https://www.google.com/maps/search/?api=1&query=EXCLUSIVE%20CUSTOM%20FINISHES%20LLC%20265%20Redding%20Rd%2C%20Redding%2C%20CT%2006896%2C%20USA" target="_blank" class="btn-directions">
+            &#128205; Get Directions
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-main">
+
+    <div class="footer-brand">
+      <span class="footer-logo-name">Exclusive Custom Finishes LLC</span>
+      <span class="footer-logo-sub">Flooring Contractors · Redding, CT</span>
+      <p class="footer-brand-desc">
+        Premium flooring installation, refinishing, and restoration services for residential and commercial clients throughout Redding, Connecticut and the surrounding area.
+      </p>
+      <div class="footer-contact-info">
+        <a href="tel:+19145652747">&#9742; (914) 565-2747</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=EXCLUSIVE%20CUSTOM%20FINISHES%20LLC%20265%20Redding%20Rd%2C%20Redding%2C%20CT%2006896%2C%20USA" target="_blank">&#128205; 265 Redding Rd, Redding, CT 06896</a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="#hero" onclick="document.getElementById('hero').scrollIntoView({behavior:'smooth'}); return false;">Home</a></li>
+        <li><a href="#about" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'}); return false;">About Us</a></li>
+        <li><a href="#services" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'}); return false;">Services</a></li>
+        <li><a href="#gallery" onclick="document.getElementById('gallery').scrollIntoView({behavior:'smooth'}); return false;">Gallery</a></li>
+        <li><a href="#hours" onclick="document.getElementById('hours').scrollIntoView({behavior:'smooth'}); return false;">Hours</a></li>
+        <li><a href="#contact" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'}); return false;">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#services" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'}); return false;">Hardwood Flooring</a></li>
+        <li><a href="#services" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'}); return false;">Luxury Vinyl Plank</a></li>
+        <li><a href="#services" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'}); return false;">Tile &amp; Stone</a></li>
+        <li><a href="#services" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'}); return false;">Floor Refinishing</a></li>
+        <li><a href="#services" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'}); return false;">Laminate Flooring</a></li>
+        <li><a href="#services" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'}); return false;">Custom Staining</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+19145652747">(914) 565-2747</a></li>
+        <li><a href="https://www.google.com/maps/search/?api=1&query=EXCLUSIVE%20CUSTOM%20FINISHES%20LLC%20265%20Redding%20Rd%2C%20Redding%2C%20CT%2006896%2C%20USA" target="_blank">265 Redding Rd</a></li>
+        <li><a href="https://www.google.com/maps/search/?api=1&query=EXCLUSIVE%20CUSTOM%20FINISHES%20LLC%20265%20Redding%20Rd%2C%20Redding%2C%20CT%2006896%2C%20USA" target="_blank">Redding, CT 06896</a></li>
+        <li><a href="#hours" onclick="document.getElementById('hours').scrollIntoView({behavior:'smooth'}); return false;">Mon–Fri: 8AM–6PM</a></li>
+        <li><a href="#hours" onclick="document.getElementById('hours').scrollIntoView({behavior:'smooth'}); return false;">Sat: 9AM–4PM</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <span class="footer-copyright">&copy; 2025 Exclusive Custom Finishes LLC. All rights reserved.</span>
+    <div class="footer-legal">
+      <a href="#about" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'}); return false;">About</a>
+      <a href="#services" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'}); return false;">Services</a>
+      <a href="#contact" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'}); return false;">Contact</a>
+    </div>
+  </div>
 </footer>
 
 <script>
-    const menu = document.querySelector('.menu');
-    const toggleMenu = () => {
-        menu.classList.toggle('active');
-    };
+  var hamburgerBtn = document.getElementById('hamburgerBtn');
+  var mobileMenu = document.getElementById('mobileMenu');
+  var menuOpen = false;
+
+  function closeMobileMenu() {
+    menuOpen = false;
+    mobileMenu.classList.remove('open');
+  }
+
+  hamburgerBtn.addEventListener('click', function() {
+    menuOpen = !menuOpen;
+    if (menuOpen) {
+      mobileMenu.classList.add('open');
+    } else {
+      mobileMenu.classList.remove('open');
+    }
+  });
+
+  document.addEventListener('click', function(e) {
+    if (menuOpen && !mobileMenu.contains(e.target) && !hamburgerBtn.contains(e.target)) {
+      closeMobileMenu();
+    }
+  });
 </script>
 
 <script>
@@ -139,4 +1766,3 @@
 </script>
 </body>
 </html>
-```
